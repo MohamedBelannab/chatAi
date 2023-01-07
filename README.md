@@ -24,7 +24,7 @@ npm run build
 ```
 pip install flask
 ```
-### Start server
+### Start server API
 
 ```
 py server.py
