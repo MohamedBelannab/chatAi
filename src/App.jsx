@@ -9,10 +9,11 @@ const App = () => {
     dispatch(FetchData())
    
   } , [])
+  console.log(data);
 
   
   return (
-    <div>App</div>
+    <div>{data.dataApi && data.dataApi.map((e)=> <h1>{e.answers}</h1>)}</div>
   )
 }
 

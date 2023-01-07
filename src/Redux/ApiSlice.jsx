@@ -21,7 +21,7 @@ export const chatAiSlice = createSlice({
         } ,
         [FetchData.fulfilled] : (state , action) => {
             state.loading = false 
-            state.dataApi = action.payload
+            state.dataApi.push(action.payload)
             state.error = ''
 
         } ,
