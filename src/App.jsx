@@ -1,19 +1,29 @@
 import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { FetchData } from './Redux/ApiSlice'
+import { useSelector } from 'react-redux'
+import InputForm from './components/InputForm'
+import Ai from './components/Ai'
+import Me from './components/Me'
 
 const App = () => {
-  const dispatch = useDispatch()
   const data = useSelector(state => state.chatAi)
-  useEffect(()=>{
-    dispatch(FetchData())
-   
-  } , [])
+  
   console.log(data);
 
   
   return (
-    <div>{data.dataApi && data.dataApi.map((e)=> <h1>{e.answers}</h1>)}</div>
+    <div className='main'>
+      <div className="page">
+        <div className="conversation">
+        <Me data={data.dataApi}/>
+         <Ai data={data.dataApi} /> 
+        </div>
+        <InputForm/>
+      </div>
+      
+     
+      
+      
+    </div>
   )
 }
 

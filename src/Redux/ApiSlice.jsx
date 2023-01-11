@@ -4,11 +4,12 @@ import api from '../AxiosApi/api'
 const initialState = {
     loading : false ,
     dataApi : [] , 
+    fromMe : [] ,
     error : ""
 }
 
-export const FetchData = createAsyncThunk('chat/fetch', async()=>{
-    const res = await api.get("/ask")
+export const FetchData = createAsyncThunk('chat/fetch', async(q)=>{
+    const res = await api.get(`/ask?q=${q}`)
     return res.data
 
 })
@@ -30,9 +31,16 @@ export const chatAiSlice = createSlice({
             state.dataApi = []
             state.error =  action.error.message
         }
+    } ,
+    reducers : {
+        list_Me : (state , action) =>{
+
+         state.fromMe.push(action.payload)
+
+        }
     }
     
 
 })
-
+export const {list_Me} = chatAiSlice.actions
 export default chatAiSlice.reducer

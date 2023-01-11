@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+:root{
+    --mainColor:#202123;
+    --main2color : #343541 ;
+    --main3Color : #3f404b
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+.main {
+    display:  flex;
+    width: 100%;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--main2color);
+    width:  100vw;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    
+    
+}
+.ask{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    height: 50%;
+    padding:  10px 10px;
+}
+.ask-row input {
+    border: none;
+    width: 50vw;
+    max-height: 200px;
+    height: 40px;
+    overflow-y: hidden;
+    outline: none;
+    background-color: var(--main3Color);
+    padding: 9px 5px;
+    color: white;
+    font-weight: 700;
+
+}
+.row{
+    width: 70vw;
+    padding: 30px 10px;
+}
+.container h1 {
+    text-align: center;
+}
+.row .item {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+.conversation{
+    display: flex;
+    flex-direction: column;
+    padding: 10 10px ;
+    width: 90%;
+    border-radius: 5px;
+    flex:  1 1 4%;
+    
+}
+.conv{
+    padding: 10px 10px;
+    align-items: flex-start;
+    margin-top: 5px;
+    
+}
+.ai {
+    background-color:var(--main3Color);
+}
+.chat {
+    display: flex;
+}
